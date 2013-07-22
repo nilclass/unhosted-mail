@@ -1,0 +1,21 @@
+<div class="mailbox-list">
+  <h1>{{name}}</h1>
+  <div class="pagination">
+    {{#prev}}
+      <a rel="prev" href="{{prev}}">Previous</a>
+    {{/prev}}
+    <div class="count">{{count}}&nbsp;/&nbsp;{{total}} messages</div>
+    {{#next}}
+      <a rel="next" href="{{next}}">Next</a>
+    {{/next}}
+  </div>
+  <ol class="messages">
+    {{#messages}}
+      <li class="message">
+        <div class="from">{{from}}</div>
+        <div class="subject">{{subject}}</div>
+        <div class="date">{{date}}</div>
+      </li>
+    {{/messages}}
+  </ol>
+</div>

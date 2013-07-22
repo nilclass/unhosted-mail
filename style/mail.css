@@ -1,0 +1,2 @@
+#header .nav-item { font-weight: bold; display: inline-block; padding: 0.5em 1em; }
+#header .nav-item.current { background: black; color: white; }

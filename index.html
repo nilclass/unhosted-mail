@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Unhosted Mail</title>
+    <link rel="stylesheet" href="style/mail.css">
+    <link rel="version-history" href="git://github.com/nilclass/unhosted-mail.git">
+
+    <script type="text/javascript" src="lib/promising.js"></script>
+    <script type="text/javascript" src="lib/mustache.js"></script>
+
+    <script type="text/javascript" src="src/framework/eventhandling.js"></script>
+    <script type="text/javascript" src="src/framework/router.js"></script>
+    <script type="text/javascript" src="src/framework/templates.js"></script>
+    <script type="text/javascript" src="src/framework/app.js"></script>
+
+    <script type="text/javascript" src="src/router.js"></script>
+    <script type="text/javascript" src="src/mailcache.js"></script>
+    <script type="text/javascript" src="src/app.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <a class="nav-item" href="mailbox/inbox" data-item-name="inbox">Inbox</a>
+      <a class="nav-item" href="compose" data-item-name="compose">Compose</a>
+      <a class="nav-item" href="settings" data-item-name="settings">Settings</a>
+    </div>
+    <div id="content"></div>
+  </body>
+</html>
