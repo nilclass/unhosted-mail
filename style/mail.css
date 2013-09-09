@@ -1,2 +1,100 @@
 #header .nav-item { font-weight: bold; display: inline-block; padding: 0.5em 1em; }
 #header .nav-item.current { background: black; color: white; }
+
+#content a[rel=prev], #content a[rel=next] {
+    display: inline-block;
+    width: 10em;
+}
+
+#content a[rel=next] {
+    text-align: right;
+}
+
+input.error {
+    border-color: red;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+#sockethub, #fetch-info {
+    position: absolute;
+    right: 10%;
+}
+
+#fetch-info {
+    top: 2em;
+}
+
+.messages .message {
+    line-height: 3em;
+    border-bottom: groove 2px #ccc;
+    margin-bottom: 1px;
+}
+
+.messages .message:first-child {
+    border-top: groove 2px #ccc;
+}
+
+
+.messages .message .from, .messages .message .subject, .messages .message .date {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.messages .message .from {
+    width: 20%;
+}
+
+.messages .message .subject {
+    width: 60%;
+}
+
+.messages .message .date {
+    width: 10%;
+}
+
+.input {
+    width: 100%;
+}
+
+.input input, .input textarea {
+    width: 100%;
+    font-family: monospace;
+    box-sizing: border-box;
+    padding: 0.5em;
+    outline: none;
+    border: solid 1px #ccc;
+}
+
+.input input:focus, .input textarea:focus {
+    border-color: black;
+}
+
+.input input {
+}
+
+.input textarea {
+    min-height: 10em;
+}
+
+.buttons button {
+    border: solid 1px #aaa;
+    background-image: linear-gradient(#eee, #ccc);
+    padding: 7px 20px;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-image: linear-gradient(#fff, #ddd);
+}
+
+.buttons button:active {
+    background-image: linear-gradient(#ddd, #fff);
+}
+
+.buttons button.toggle-on {
+    background-image: linear-gradient(#ccc, #eee);
+}

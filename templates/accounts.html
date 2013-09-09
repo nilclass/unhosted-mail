@@ -1,0 +1,10 @@
+<h1>Accounts</h1>
+<a href="accounts/new">New Account</a>
+<ul>
+  {{#accounts}}
+    <li><a href="accounts/switch/{{.}}">{{.}}</a></li>
+  {{/accounts}}
+  {{^accounts}}
+    <li><em>(no accounts)</em></li>
+  {{/accounts}}
+</ul>

@@ -10,6 +10,12 @@ var Templates = function(container) {
 Templates.prototype = {
 
   render: function(name, locals) {
+    return this.renderToString(name, locals).then(function(source) {
+      this._container.innerHTML = source;
+    }.bind(this));
+  },
+
+  renderToString: function(name, locals) {
     return this._lookup(name).then(function(template) {
       return this._render(template, locals);
     }.bind(this));
@@ -43,7 +49,7 @@ Templates.prototype = {
   },
 
   _render: function(template, locals) {
-    this._container.innerHTML = Mustache.render(template, locals, this._cache);
+    return Mustache.render(template, locals, this._cache);
   },
 
   _load: function(name) {

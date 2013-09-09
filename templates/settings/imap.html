@@ -1,0 +1,15 @@
+<a rel="prev" href="settings/smtp">&laquo; Outgoing (SMTP)</a>
+<a rel="next"></a>
+<h2>Incoming (IMAP)</h2>
+<form>
+  <input type="text" name="host" placeholder="Hostname" value="{{imap.host}}">
+  <br/>
+  <input type="text" name="username" placeholder="Login" value="{{imap.username}}">
+  <br/>
+  <input type="password" name="password" placeholder="Password" value="{{imap.password}}">
+  <br/>
+  <label><input type="checkbox" name="secure" {{#imap.secure}}checked{{/imap.secure}}> Secure?</label>
+  <br/>
+  <input type="number" name="port" placeholder="Port" value="{{imap.port}}">
+</form>
+

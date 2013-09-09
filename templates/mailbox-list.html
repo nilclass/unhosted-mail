@@ -1,21 +1,25 @@
 <div class="mailbox-list">
   <h1>{{name}}</h1>
+  <button data-command="fetch">Fetch mail</button>
   <div class="pagination">
     {{#prev}}
-      <a rel="prev" href="{{prev}}">Previous</a>
+      <a rel="prev" href="{{prev}}">&laquo; Previous</a>
     {{/prev}}
-    <div class="count">{{count}}&nbsp;/&nbsp;{{total}} messages</div>
     {{#next}}
-      <a rel="next" href="{{next}}">Next</a>
+      <a rel="next" href="{{next}}">Next &raquo;</a>
     {{/next}}
   </div>
-  <ol class="messages">
+  <div class="messages">
     {{#messages}}
-      <li class="message">
-        <div class="from">{{from}}</div>
+      <div class="message" data-path="{{path}}">
+        <div class="from" title="{{from.address}}">{{from.name}}</div>
         <div class="subject">{{subject}}</div>
-        <div class="date">{{date}}</div>
-      </li>
+        <div class="date" title="{{fullDate}}">{{date}}</div>
+      </div>
     {{/messages}}
-  </ol>
+  </div>
+
+  {{^messages}}
+  <em>No messages.</em>
+  {{/messages}}
 </div>

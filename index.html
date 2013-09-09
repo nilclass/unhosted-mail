@@ -8,7 +8,12 @@
 
     <script type="text/javascript" src="lib/promising.js"></script>
     <script type="text/javascript" src="lib/mustache.js"></script>
+    <script type="text/javascript" src="lib/remotestorage.js"></script>
+    <script type="text/javascript" src="lib/remotestorage-email.js"></script>
+    <script type="text/javascript" src="lib/remotestorage-contacts.js"></script>
+    <script type="text/javascript" src="lib/sockethub-client.js"></script>
 
+    <script type="text/javascript" src="src/framework/$.js"></script>
     <script type="text/javascript" src="src/framework/eventhandling.js"></script>
     <script type="text/javascript" src="src/framework/router.js"></script>
     <script type="text/javascript" src="src/framework/templates.js"></script>
@@ -19,10 +24,14 @@
     <script type="text/javascript" src="src/app.js"></script>
   </head>
   <body>
+    <div id="flash"></div>
+    <div id="sockethub"></div>
+    <div id="fetch-info"></div>
     <div id="header">
       <a class="nav-item" href="mailbox/inbox" data-item-name="inbox">Inbox</a>
       <a class="nav-item" href="compose" data-item-name="compose">Compose</a>
       <a class="nav-item" href="settings" data-item-name="settings">Settings</a>
+      <a class="nav-item" href="accounts" data-item-name="accounts">Accounts</a>
     </div>
     <div id="content"></div>
   </body>

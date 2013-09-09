@@ -1,0 +1,14 @@
+{{^isNew}}
+  <a rel="prev"></a>
+  <a rel="next" href="settings/smtp">Outgoing (SMTP) &raquo;</a>
+{{/isNew}}
+<h2>Account</h2>
+<form>
+  <input type="text" value="{{actor.name}}" name="name" placeholder="Your Name">
+  <br/>
+  <input type="email" value="{{actor.address}}" name="address" placeholder="Email Address">
+  {{#isNew}}
+    <br/>
+    <input type="submit" value="Create Account">
+  {{/isNew}}
+</form>

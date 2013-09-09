@@ -1,2 +1,8 @@
-<div><input name="to" placeholder="To"></div>
-<div><input name="subject" placeholder="Subject"></div>
+<div class="buttons">
+  <button data-command="send">Send</button>
+  <button {{#flags.encrypt}}class="toggle-on" data-state="true"{{/flags.encrypt}} data-command="toggle" data-toggle-flag="encrypt">Encrypt</button>
+  <button {{#flags.sign}}class="toggle-on" data-state="true"{{/flags.sign}} data-command="toggle" data-toggle-flag="sign">Sign</button>
+</div>
+<div class="input string"><input name="to" placeholder="To"></div>
+<div class="input string"><input name="subject" placeholder="Subject"></div>
+<div class="input text"><textarea name="body" placeholder="Text..."></textarea></div>

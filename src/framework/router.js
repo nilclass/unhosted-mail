@@ -9,8 +9,12 @@ var Router = function(app, actions) {
 Router.prototype = {
   generate: function(actionName, params) {
     var action = this.actions[actionName];
-    if(action.generate) {
+    if(params && ! action) {
+      throw new Router.ActionNotFound("No action named: " + actionName);
+    } else if(action && action.generate) {
       return action.generate(params);
+    } else if(! params) {
+      return actionName; // considered absolute path.
     } else {
       throw new Router.NotGeneratable("Action cannot be generated: " + actionName);
     }
@@ -21,7 +25,7 @@ Router.prototype = {
     for(var name in this.actions) {
       action = this.actions[name];
       if((md = path.match(action.match))) {
-        console.log('state matched', JSON.stringify(path), action, md);
+        //console.log('state matched', JSON.stringify(path), action, md);
         return function(state) {
           state.action = name;
           return action.run.apply(this.app, [state].concat(md.slice(1)));
@@ -52,3 +56,15 @@ Router.NotGeneratable = function(message) {
 Router.NotGeneratable.prototype = Object.create(Error.prototype, {
   constructor: { value: Router.NotGeneratable }
 });
+
+
+Router.ActionNotFound = function(message) {
+  var err = Error.call(this, message);
+  err.name = 'Router.ActionNotFound';
+  return err;
+};
+
+Router.ActionNotFound.prototype = Object.create(Error.prototype, {
+  constructor: { value: Router.ActionNotFound }
+});
+

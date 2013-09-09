@@ -1,0 +1,17 @@
+<strong>Sockethub:</strong>
+{{^failed}}
+  {{#connected}}
+  {{#registered}}
+    <em>registered.</em>
+  {{/registered}}
+  {{^registered}}
+    <em>registering...</em>
+  {{/registered}}
+  {{/connected}}
+  {{^connected}}
+    <em>disconnected</em>
+  {{/connected}}
+{{/failed}}
+{{#failed}}
+  <em>connection failed.</em>
+{{/failed}}
